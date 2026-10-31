@@ -30,5 +30,8 @@ jobs:
             compose-file: ./docker-compose.yaml
             up-flags: -d
 
-      - name: Run tests
-        run: npx playwright test
+      - name: Run empty array test
+        run: npx playwright test tests/returnEmptyArray.spec.ts
+
+      - name: Run rest of the tests
+        run: npx playwright test tests/user-controller.test.ts
